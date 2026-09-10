@@ -184,12 +184,12 @@
     const copyHeroBtn = document.getElementById("copy-email-hero");
     const copyBottomBtn = document.getElementById("copy-email-bottom");
     const copyToast = document.getElementById("copy-toast");
-    const emailAddress = "hello@itsmeyuvraj.dev";
+    const emailAddress = "yuvarma@hotmail.com";
     let toastTimer = null;
 
     function showCopyToast(msg) {
       if (!copyToast) return;
-      copyToast.textContent = msg || "✓ hello@itsmeyuvraj.dev copied to clipboard!";
+      copyToast.textContent = msg || "✓ yuvarma@hotmail.com copied to clipboard!";
       copyToast.classList.add("is-visible");
 
       if (toastTimer) clearTimeout(toastTimer);
@@ -202,7 +202,7 @@
       try {
         if (navigator.clipboard && navigator.clipboard.writeText) {
           await navigator.clipboard.writeText(emailAddress);
-          showCopyToast("✓ hello@itsmeyuvraj.dev copied to clipboard!");
+          showCopyToast("✓ yuvarma@hotmail.com copied to clipboard!");
           return;
         }
       } catch (err) {}
