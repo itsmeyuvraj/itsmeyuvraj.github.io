@@ -1,26 +1,29 @@
 /**
  * Yuvraj — Portfolio Interactivity & Live Showcase Simulation
- * Fully defensive, zero external dependencies, safe in Private Browsing
+ * Production-ready, zero dependencies, protected against duplicate execution
  */
 
 (function () {
   "use strict";
 
+  // Prevent multiple initializations if script is loaded multiple times
+  if (window.__PORTFOLIO_INIT_DONE__) return;
+  window.__PORTFOLIO_INIT_DONE__ = true;
+
   function initPortfolio() {
+    const htmlRoot = document.documentElement;
+
     // ------------------------------------------------------------------------
-    // 1. Theme Management (Dark / Light Mode)
+    // 1. Theme Management (Day / Night Switcher)
     // ------------------------------------------------------------------------
     const themeToggleBtn = document.getElementById("theme-toggle");
-    const htmlRoot = document.documentElement;
     const themeMeta = document.querySelector('meta[name="theme-color"]');
 
     function getPreferredTheme() {
       try {
-        const storedTheme = localStorage.getItem("preferred-theme");
-        if (storedTheme === "light" || storedTheme === "dark") return storedTheme;
-      } catch (e) {
-        // Storage disabled or blocked in private mode
-      }
+        const stored = localStorage.getItem("portfolio-theme");
+        if (stored === "light" || stored === "dark") return stored;
+      } catch (e) {}
       try {
         if (window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches) {
           return "light";
@@ -29,13 +32,12 @@
       return "dark";
     }
 
-    function applyTheme(theme) {
-      try {
-        htmlRoot.setAttribute("data-theme", theme);
-      } catch (e) {}
+    function applyTheme(targetTheme) {
+      const theme = targetTheme === "light" ? "light" : "dark";
+      htmlRoot.setAttribute("data-theme", theme);
 
       try {
-        localStorage.setItem("preferred-theme", theme);
+        localStorage.setItem("portfolio-theme", theme);
       } catch (e) {}
 
       try {
@@ -45,14 +47,16 @@
       } catch (e) {}
     }
 
-    // Apply theme immediately
+    // Initialize theme state
     applyTheme(getPreferredTheme());
 
     if (themeToggleBtn) {
-      themeToggleBtn.addEventListener("click", function () {
-        const currentTheme = htmlRoot.getAttribute("data-theme") || "dark";
-        const newTheme = currentTheme === "dark" ? "light" : "dark";
-        applyTheme(newTheme);
+      themeToggleBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        const currentTheme = htmlRoot.getAttribute("data-theme") === "light" ? "light" : "dark";
+        const nextTheme = currentTheme === "light" ? "dark" : "light";
+        applyTheme(nextTheme);
       });
     }
 
@@ -60,7 +64,7 @@
       if (window.matchMedia) {
         window.matchMedia("(prefers-color-scheme: light)").addEventListener("change", function (e) {
           try {
-            if (!localStorage.getItem("preferred-theme")) {
+            if (!localStorage.getItem("portfolio-theme")) {
               applyTheme(e.matches ? "light" : "dark");
             }
           } catch (err) {}
@@ -69,49 +73,51 @@
     } catch (e) {}
 
     // ------------------------------------------------------------------------
-    // 2. Mobile Navigation Drawer
+    // 2. Mobile Navigation Drawer & Hamburger Toggle
     // ------------------------------------------------------------------------
     const menuToggle = document.querySelector(".menu-toggle");
     const siteNav = document.getElementById("site-nav");
 
-    function toggleNav(forceState) {
+    function setNavState(isOpen) {
       if (!siteNav) return;
-      const isOpen = typeof forceState === "boolean" ? forceState : !siteNav.classList.contains("is-open");
       siteNav.classList.toggle("is-open", isOpen);
       if (menuToggle) {
+        menuToggle.classList.toggle("is-active", isOpen);
         menuToggle.setAttribute("aria-expanded", String(isOpen));
       }
     }
 
     if (menuToggle) {
       menuToggle.addEventListener("click", function (e) {
+        e.preventDefault();
         e.stopPropagation();
-        toggleNav();
+        const isOpen = siteNav ? siteNav.classList.contains("is-open") : false;
+        setNavState(!isOpen);
       });
     }
 
+    // Close when tapping any link inside the mobile nav
     if (siteNav) {
       siteNav.querySelectorAll(".nav-link").forEach(function (link) {
         link.addEventListener("click", function () {
-          toggleNav(false);
+          setNavState(false);
         });
       });
     }
 
-    document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape" && siteNav && siteNav.classList.contains("is-open")) {
-        toggleNav(false);
+    // Close when tapping outside the menu on mobile
+    document.addEventListener("click", function (e) {
+      if (siteNav && siteNav.classList.contains("is-open")) {
+        if (!siteNav.contains(e.target) && (!menuToggle || !menuToggle.contains(e.target))) {
+          setNavState(false);
+        }
       }
     });
 
-    document.addEventListener("click", function (e) {
-      if (
-        siteNav &&
-        siteNav.classList.contains("is-open") &&
-        !siteNav.contains(e.target) &&
-        (!menuToggle || !menuToggle.contains(e.target))
-      ) {
-        toggleNav(false);
+    // Close on Escape key
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && siteNav && siteNav.classList.contains("is-open")) {
+        setNavState(false);
       }
     });
 
@@ -207,7 +213,6 @@
         }
       } catch (err) {}
 
-      // Fallback
       window.prompt("Copy email address:", emailAddress);
     }
 
