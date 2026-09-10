@@ -1,186 +1,1042 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Yuvraj builds thoughtful digital products, experiments, and experiences." />
-    <meta name="theme-color" content="#f4f1ea" />
-    <title>Yuvraj — Product-minded developer</title>
+    <meta name="description" content="Yuvraj — Software Engineer specializing in native macOS, iOS, and Android development. Crafting high-performance apps, clean architectures, and refined digital experiences." />
+    <meta name="keywords" content="Yuvraj, itsmeyuvraj, Software Engineer, iOS Developer, macOS Developer, Android Developer, Swift, SwiftUI, Kotlin, Jetpack Compose, Portfolio" />
+    <meta name="author" content="Yuvraj" />
+    <meta name="theme-color" content="#0a0c10" />
+
+    <!-- Open Graph / Social Meta -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Yuvraj — Software Engineer & Native App Developer" />
+    <meta property="og:description" content="Building high-performance native apps (macOS, iOS, Android) with clean architecture and meticulous design craft." />
+    <meta property="og:url" content="https://itsmeyuvraj.github.io" />
+
+    <title>Yuvraj — Software Engineer & Native App Developer</title>
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <!-- Background Ambient Glow -->
+    <div class="ambient-glow" aria-hidden="true"></div>
+
+    <!-- Header Navigation -->
     <header class="site-header">
-      <a class="brand" href="#" aria-label="Yuvraj home">
-        <span class="brand-mark">Y</span>
-        <span>itsmeyuvraj</span>
-      </a>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-        <span></span><span></span>
-        <span class="sr-only">Toggle menu</span>
-      </button>
-      <nav id="site-nav" class="site-nav" aria-label="Main navigation">
-        <a href="#work">Work</a>
-        <a href="#about">About</a>
-        <a href="#repos">Repositories</a>
-        <a class="nav-contact" href="#contact">Let's talk <span>↗</span></a>
-      </nav>
+      <div class="header-inner">
+        <a class="brand" href="#" aria-label="Yuvraj Home">
+          <span class="brand-avatar">Y</span>
+          <div class="brand-text">
+            <span class="brand-name">Yuvraj</span>
+            <span class="brand-handle">@itsmeyuvraj</span>
+          </div>
+        </a>
+
+        <nav id="site-nav" class="site-nav" aria-label="Main navigation">
+          <a href="#work" class="nav-link">Work</a>
+          <a href="#skills" class="nav-link">Skills</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#repos" class="nav-link">Repositories</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+
+        <div class="header-actions">
+          <!-- Theme Toggle -->
+          <button id="theme-toggle" class="theme-toggle-btn" type="button" aria-label="Toggle light or dark theme" title="Toggle theme">
+            <span class="theme-icon sun-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            </span>
+            <span class="theme-icon moon-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </span>
+          </button>
+
+          <a href="mailto:hello@itsmeyuvraj.dev?subject=Interview%20Inquiry%20-%20Software%20Engineer" class="button button-header">
+            <span>Let's talk</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+          </a>
+
+          <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
     </header>
 
-    <main>
+    <main id="main-content">
+      <!-- Hero Section -->
       <section class="hero section-shell">
-        <div class="hero-copy">
-          <p class="eyebrow"><span class="status-dot"></span> Available for select projects</p>
-          <h1>Ideas made<br /><em>useful.</em></h1>
-          <p class="hero-intro">I'm Yuvraj, a developer and creative thinker turning complex problems into clear, friendly digital experiences.</p>
+        <div class="hero-content">
+          <div class="status-badge" aria-label="Status: Open to software engineering roles">
+            <span class="status-dot-pulse"></span>
+            <span>Open to Software Engineering Opportunities</span>
+          </div>
+
+          <h1 class="hero-title">
+            Crafting fast, intuitive <span class="gradient-text">native apps</span> & modern software.
+          </h1>
+
+          <p class="hero-description">
+            I'm <strong>Yuvraj</strong>, a software engineer specializing in <strong>macOS</strong>, <strong>iOS</strong>, and <strong>Android</strong> development. I focus on low-overhead system performance, clean architecture, and delightful user interfaces.
+          </p>
+
+          <div class="hero-highlights">
+            <div class="hero-stat-pill">
+              <span class="stat-number">6+</span>
+              <span class="stat-label">Open Source Apps</span>
+            </div>
+            <div class="hero-stat-pill">
+              <span class="stat-number">Native</span>
+              <span class="stat-label">Swift & Kotlin</span>
+            </div>
+            <div class="hero-stat-pill">
+              <span class="stat-number">100%</span>
+              <span class="stat-label">Privacy-First Design</span>
+            </div>
+          </div>
+
           <div class="hero-actions">
-            <a class="button button-dark" href="#work">See my work <span>↓</span></a>
-            <a class="text-link" href="mailto:hello@itsmeyuvraj.dev">hello@itsmeyuvraj.dev <span>↗</span></a>
+            <a class="button button-primary" href="#work">
+              <span>View Featured Projects</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+            </a>
+
+            <a class="button button-secondary" href="https://github.com/itsmeyuvraj" target="_blank" rel="noreferrer">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              <span>GitHub</span>
+            </a>
+
+            <button class="button button-ghost" id="copy-email-hero" type="button" aria-label="Copy email address to clipboard">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span>hello@itsmeyuvraj.dev</span>
+            </button>
           </div>
         </div>
-        <div class="hero-art" aria-label="Abstract illustration">
-          <div class="art-orbit orbit-one"></div>
-          <div class="art-orbit orbit-two"></div>
-          <div class="art-sun"></div>
-          <div class="art-label label-top">curious<br />by default</div>
-          <div class="art-label label-bottom">build / learn / share</div>
-          <div class="art-star">✳</div>
-        </div>
-      </section>
 
-      <section id="work" class="work section-shell">
-        <div class="section-heading">
-          <p class="eyebrow">Selected work</p>
-          <p class="section-note">A few things I've had the pleasure<br />of bringing to life.</p>
-        </div>
-        <div class="project-grid">
-          <a class="project-card project-card-large" href="https://github.com/itsmeyuvraj/Mastodon-Client-For-Android" target="_blank" rel="noreferrer">
-            <div class="project-visual visual-lumen">
-              <span class="visual-badge">01 / Android</span>
-              <div class="lumen-screen">
-                <span class="screen-line line-short"></span>
-                <span class="screen-line"></span>
-                <span class="screen-line line-mid"></span>
-                <div class="screen-chart"><i></i><i></i><i></i><i></i><i></i></div>
+        <!-- Interactive Hero Showcase Widget (Statz macOS Live Preview) -->
+        <div class="hero-visual-col">
+          <div class="mac-window-mockup" id="hero-statz-mockup">
+            <div class="window-header">
+              <div class="traffic-lights">
+                <span class="light red"></span>
+                <span class="light yellow"></span>
+                <span class="light green"></span>
               </div>
-              <span class="visual-caption">live feeds,<br />right at home</span>
+              <div class="window-title">
+                <span class="window-app-icon">⚡</span>
+                <span>Statz — Menu Bar Monitor (macOS)</span>
+              </div>
+              <div class="window-status-pill">
+                <span class="live-dot"></span> Live Demo
+              </div>
             </div>
-            <div class="project-meta">
-              <div><h3>Mastodon Widget for Android</h3><p>A feature-rich widget and app for live feeds, posting, and multi-server support.</p></div>
-              <span class="project-arrow">↗</span>
-            </div>
-          </a>
-          <a class="project-card" href="https://github.com/itsmeyuvraj/Statz" target="_blank" rel="noreferrer">
-            <div class="project-visual visual-field">
-              <span class="visual-badge">02 / macOS</span>
-              <div class="field-sun"></div>
-              <div class="field-path"></div>
-              <span class="field-word">system<br /><em>statz</em></span>
-            </div>
-            <div class="project-meta">
-              <div><h3>Statz</h3><p>A SwiftUI menu bar app for system performance, focus time, screen time, and weather.</p></div>
-              <span class="project-arrow">↗</span>
-            </div>
-          </a>
-          <a class="project-card" href="https://github.com/itsmeyuvraj/DocuChat" target="_blank" rel="noreferrer">
-            <div class="project-visual visual-loop">
-              <span class="visual-badge">03 / macOS</span>
-              <div class="loop-shape"></div>
-              <span class="loop-label">ask<br />your docs</span>
-            </div>
-            <div class="project-meta">
-              <div><h3>DocuChat</h3><p>A private Mac app for asking questions about PDFs, photos, and text files.</p></div>
-              <span class="project-arrow">↗</span>
-            </div>
-          </a>
-        </div>
-      </section>
 
-      <section id="about" class="about section-shell">
-        <div class="about-stamp">✳<br /><span>hello<br />there</span></div>
-        <div class="about-content">
-          <p class="eyebrow">A little about me</p>
-          <h2>Good work sits<br />at the intersection of <em>clarity</em><br />and curiosity.</h2>
-          <div class="about-columns">
-            <p>I care about the details that make a product feel intuitive, the ideas that make it memorable, and the people who make the whole thing possible.</p>
-            <p>When I'm not coding, you'll find me collecting interesting questions, taking long walks, or making an unnecessarily elaborate cup of coffee.</p>
+            <div class="mac-window-body">
+              <div class="statz-menubar-preview">
+                <div class="mockup-menu-topbar">
+                  <span class="menu-item active">Performance</span>
+                  <span class="menu-item">Sensors</span>
+                  <span class="menu-item">Network</span>
+                </div>
+
+                <div class="metrics-grid">
+                  <!-- CPU Metric -->
+                  <div class="metric-card">
+                    <div class="metric-header">
+                      <span class="metric-name">CPU USAGE</span>
+                      <span class="metric-badge">Apple M-Series</span>
+                    </div>
+                    <div class="metric-value-row">
+                      <span class="metric-val" id="mock-cpu-val">18%</span>
+                      <span class="metric-trend text-green">Optimal</span>
+                    </div>
+                    <div class="metric-bar-track">
+                      <div class="metric-bar-fill cpu-fill" id="mock-cpu-bar" style="width: 18%;"></div>
+                    </div>
+                    <div class="metric-subtext">8 Performance / 4 Efficiency cores</div>
+                  </div>
+
+                  <!-- GPU Metric (Highlights GPU feature) -->
+                  <div class="metric-card">
+                    <div class="metric-header">
+                      <span class="metric-name">GPU ENGINE</span>
+                      <span class="metric-badge accent-badge">Metal 3</span>
+                    </div>
+                    <div class="metric-value-row">
+                      <span class="metric-val" id="mock-gpu-val">34%</span>
+                      <span class="metric-trend text-indigo">Active Render</span>
+                    </div>
+                    <div class="metric-bar-track">
+                      <div class="metric-bar-fill gpu-fill" id="mock-gpu-bar" style="width: 34%;"></div>
+                    </div>
+                    <div class="metric-subtext">Hardware-accelerated tracking</div>
+                  </div>
+
+                  <!-- Memory Metric -->
+                  <div class="metric-card">
+                    <div class="metric-header">
+                      <span class="metric-name">UNIFIED MEMORY</span>
+                      <span class="metric-badge">SystemKit</span>
+                    </div>
+                    <div class="metric-value-row">
+                      <span class="metric-val" id="mock-ram-val">6.2 GB</span>
+                      <span class="metric-trend">of 16 GB</span>
+                    </div>
+                    <div class="metric-bar-track">
+                      <div class="metric-bar-fill ram-fill" id="mock-ram-bar" style="width: 38%;"></div>
+                    </div>
+                    <div class="metric-subtext">Low pressure (cached 4.1 GB)</div>
+                  </div>
+
+                  <!-- Network & Battery -->
+                  <div class="metric-card">
+                    <div class="metric-header">
+                      <span class="metric-name">NETWORK & BATTERY</span>
+                      <span class="metric-badge">I/O</span>
+                    </div>
+                    <div class="metric-value-row">
+                      <span class="metric-val" id="mock-net-val">↓ 2.4 MB/s</span>
+                      <span class="metric-trend text-green">98% ⚡</span>
+                    </div>
+                    <div class="metric-bar-track">
+                      <div class="metric-bar-fill net-fill" id="mock-net-bar" style="width: 45%;"></div>
+                    </div>
+                    <div class="metric-subtext">Wi-Fi 6E (Low Latency)</div>
+                  </div>
+                </div>
+
+                <div class="widget-footer-bar">
+                  <div class="widget-tag">
+                    <span class="tech-icon-swift">Swift</span> Built natively with SwiftUI & Combine
+                  </div>
+                  <a href="https://github.com/itsmeyuvraj/Statz" target="_blank" rel="noreferrer" class="widget-repo-link">
+                    View on GitHub ↗
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
-          <a class="text-link" href="mailto:hello@itsmeyuvraj.dev">More about me <span>↗</span></a>
         </div>
       </section>
 
-      <section id="repos" class="notes section-shell">
-        <span id="notes" class="sr-only"></span>
-        <div class="section-heading">
-          <p class="eyebrow">Highlighted Repositories</p>
-          <a class="text-link" href="https://github.com/itsmeyuvraj" target="_blank" rel="noreferrer">See all on GitHub <span>↗</span></a>
+      <!-- Featured Projects Section -->
+      <section id="work" class="work section-shell">
+        <div class="section-header-wrap">
+          <div class="section-header-copy">
+            <span class="eyebrow-tag">Featured Work</span>
+            <h2 class="section-title">Engineered for performance, crafted with care.</h2>
+            <p class="section-subtitle">
+              Native applications built from the ground up to be fast, memory-efficient, and respectful of user privacy.
+            </p>
+          </div>
+
+          <!-- Project Filter Pills -->
+          <div class="project-filters" role="tablist" aria-label="Filter projects by platform">
+            <button class="filter-pill active" data-filter="all" role="tab" aria-selected="true">All Projects</button>
+            <button class="filter-pill" data-filter="macos" role="tab" aria-selected="false">macOS & Swift</button>
+            <button class="filter-pill" data-filter="android" role="tab" aria-selected="false">Android & Kotlin</button>
+            <button class="filter-pill" data-filter="web" role="tab" aria-selected="false">Web & Systems</button>
+          </div>
         </div>
-        <div class="notes-list">
-          <a href="https://github.com/itsmeyuvraj/Statz" target="_blank" rel="noreferrer">
-            <span class="note-date">SWIFT</span>
-            <div class="note-info">
-              <span class="note-title">Statz</span>
-              <p class="note-desc">A SwiftUI menu bar app for system performance, focus time, screen time, and weather.</p>
+
+        <div class="projects-showcase-grid">
+          <!-- Project 1: Statz -->
+          <article class="featured-card card-full" data-category="macos">
+            <div class="card-media">
+              <div class="mockup-chrome mac-chrome">
+                <div class="chrome-header">
+                  <div class="chrome-dots">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <span class="chrome-title">Statz.app — Menu Bar Architecture</span>
+                  <span class="chrome-tag">SwiftUI</span>
+                </div>
+                <div class="chrome-canvas statz-canvas">
+                  <div class="statz-mockup-ui">
+                    <div class="statz-ui-top">
+                      <div class="statz-icon-box">⚡</div>
+                      <div>
+                        <h4>Statz System Utility</h4>
+                        <p>Menu Bar Extra • Real-time I/O & Hardware Metrics</p>
+                      </div>
+                      <span class="statz-ver-badge">v2.1</span>
+                    </div>
+
+                    <div class="statz-gauges-row">
+                      <div class="gauge-item">
+                        <div class="gauge-ring-wrap">
+                          <svg viewBox="0 0 36 36" class="circular-chart orange">
+                            <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                            <path class="circle" stroke-dasharray="24, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                            <text x="18" y="20.35" class="percentage">24%</text>
+                          </svg>
+                        </div>
+                        <span>CPU Load</span>
+                      </div>
+
+                      <div class="gauge-item">
+                        <div class="gauge-ring-wrap">
+                          <svg viewBox="0 0 36 36" class="circular-chart indigo">
+                            <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                            <path class="circle" stroke-dasharray="41, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                            <text x="18" y="20.35" class="percentage">41%</text>
+                          </svg>
+                        </div>
+                        <span>GPU Engine</span>
+                      </div>
+
+                      <div class="gauge-item">
+                        <div class="gauge-ring-wrap">
+                          <svg viewBox="0 0 36 36" class="circular-chart green">
+                            <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                            <path class="circle" stroke-dasharray="35, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                            <text x="18" y="20.35" class="percentage">35%</text>
+                          </svg>
+                        </div>
+                        <span>Memory</span>
+                      </div>
+
+                      <div class="gauge-item">
+                        <div class="gauge-ring-wrap">
+                          <svg viewBox="0 0 36 36" class="circular-chart cyan">
+                            <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                            <path class="circle" stroke-dasharray="92, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                            <text x="18" y="20.35" class="percentage">92%</text>
+                          </svg>
+                        </div>
+                        <span>Battery</span>
+                      </div>
+                    </div>
+
+                    <div class="statz-activity-sparkline">
+                      <div class="sparkline-label">
+                        <span>CPU/GPU Thread Activity (5s rolling window)</span>
+                        <span class="sparkline-rate">60 FPS refresh</span>
+                      </div>
+                      <div class="sparkline-bars">
+                        <i style="height: 35%"></i><i style="height: 48%"></i><i style="height: 40%"></i><i style="height: 65%"></i><i style="height: 52%"></i><i style="height: 30%"></i><i style="height: 44%"></i><i style="height: 78%"></i><i style="height: 60%"></i><i style="height: 42%"></i><i style="height: 55%"></i><i style="height: 38%"></i><i style="height: 68%"></i><i style="height: 50%"></i><i style="height: 32%"></i><i style="height: 45%"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <span class="note-arrow">↗</span>
+
+            <div class="card-details">
+              <div class="card-badge-row">
+                <span class="badge badge-platform">macOS App</span>
+                <span class="badge badge-tech">SwiftUI</span>
+                <span class="badge badge-tech">Combine</span>
+                <span class="badge badge-tech">SystemKit</span>
+                <span class="badge badge-tech">Hardware I/O</span>
+              </div>
+              <h3 class="card-title">Statz — Modern Menu Bar System Monitor</h3>
+              <p class="card-desc">
+                A native macOS menu bar utility built with SwiftUI that monitors live CPU, GPU engine usage, memory pressure, network activity, screen time, and weather with sub-1% background overhead.
+              </p>
+
+              <div class="engineering-takeaways">
+                <div class="takeaway-item">
+                  <strong>Architectural Highlight:</strong> Designed using Combine publishers to stream asynchronous host statistics without blocking the main UI runloop.
+                </div>
+                <div class="takeaway-item">
+                  <strong>Performance:</strong> Implemented efficient sampling rate dampening when the popover is closed to maximize Mac battery efficiency.
+                </div>
+              </div>
+
+              <div class="card-actions">
+                <a class="button button-card-primary" href="https://github.com/itsmeyuvraj/Statz" target="_blank" rel="noreferrer">
+                  <span>View Repository</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: Mastodon Client for Android -->
+          <article class="featured-card" data-category="android">
+            <div class="card-media">
+              <div class="mockup-chrome android-chrome">
+                <div class="android-status-bar">
+                  <span>9:41</span>
+                  <div class="android-icons">
+                    <span>5G</span>
+                    <span>100%</span>
+                  </div>
+                </div>
+                <div class="chrome-canvas android-canvas">
+                  <!-- Android Home Widget Mockup -->
+                  <div class="android-widget-card">
+                    <div class="widget-header">
+                      <div class="widget-badge-row">
+                        <span class="mastodon-icon">🐘</span>
+                        <span class="widget-title-text">Mastodon Feed Widget</span>
+                      </div>
+                      <span class="widget-sync-badge">Live</span>
+                    </div>
+
+                    <div class="mock-toot-item">
+                      <div class="toot-avatar">Y</div>
+                      <div class="toot-content">
+                        <div class="toot-author">
+                          <span class="author-name">Yuvraj</span>
+                          <span class="author-handle">@itsmeyuvraj</span>
+                        </div>
+                        <p class="toot-text">Just shipped the new widget update! Instant timeline preview directly on Android home screen with zero background battery drain.</p>
+                        <div class="toot-actions-row">
+                          <span>💬 12</span>
+                          <span>🔁 28</span>
+                          <span>★ 84</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="widget-bottom-actions">
+                      <button type="button" class="mock-widget-btn">New Post</button>
+                      <button type="button" class="mock-widget-btn secondary">Refresh</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-details">
+              <div class="card-badge-row">
+                <span class="badge badge-android">Android</span>
+                <span class="badge badge-tech">Kotlin</span>
+                <span class="badge badge-tech">Jetpack Compose</span>
+                <span class="badge badge-tech">Material 3</span>
+                <span class="badge badge-tech">WorkManager</span>
+              </div>
+              <h3 class="card-title">Mastodon Client & Widget for Android</h3>
+              <p class="card-desc">
+                A native Android application and interactive home screen widget that brings decentralized Mastodon timelines, real-time notifications, and multi-server posting to the palm of your hand.
+              </p>
+
+              <div class="engineering-takeaways">
+                <div class="takeaway-item">
+                  <strong>Jetpack Glance & WorkManager:</strong> Engineered responsive AppWidgetProvider using Glance and WorkManager for reliable background syncing that adheres to modern Android Doze mode.
+                </div>
+              </div>
+
+              <div class="card-actions">
+                <a class="button button-card-primary" href="https://github.com/itsmeyuvraj/Mastodon-Client-For-Android" target="_blank" rel="noreferrer">
+                  <span>View Repository</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: DocuChat -->
+          <article class="featured-card" data-category="macos">
+            <div class="card-media">
+              <div class="mockup-chrome mac-chrome">
+                <div class="chrome-header">
+                  <div class="chrome-dots">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <span class="chrome-title">DocuChat.app — Private Document Inspector</span>
+                  <span class="chrome-tag">Local AI</span>
+                </div>
+                <div class="chrome-canvas docuchat-canvas">
+                  <div class="docuchat-ui-split">
+                    <!-- Left Document Pane -->
+                    <div class="doc-pane">
+                      <div class="doc-header">
+                        <span class="doc-icon">📄</span>
+                        <span class="doc-title">Architecture_Spec.pdf</span>
+                      </div>
+                      <div class="doc-lines">
+                        <div class="doc-line doc-heading-line"></div>
+                        <div class="doc-line highlighted-line"></div>
+                        <div class="doc-line highlighted-line-short"></div>
+                        <div class="doc-line"></div>
+                        <div class="doc-line"></div>
+                      </div>
+                      <span class="doc-match-tag">Matched Section #4</span>
+                    </div>
+
+                    <!-- Right Chat Pane -->
+                    <div class="chat-pane">
+                      <div class="chat-bubble user-bubble">
+                        "What is the memory footprint of the background daemon?"
+                      </div>
+                      <div class="chat-bubble ai-bubble">
+                        <div class="ai-avatar">AI</div>
+                        <div class="ai-reply">
+                          <p>According to Section 4, the resident memory is capped at <strong>12 MB</strong> using zero-copy mmap.</p>
+                          <span class="cite-pill">Source: p. 4, line 18</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-details">
+              <div class="card-badge-row">
+                <span class="badge badge-platform">macOS App</span>
+                <span class="badge badge-tech">Swift</span>
+                <span class="badge badge-tech">PDFKit</span>
+                <span class="badge badge-tech">Local Embeddings</span>
+                <span class="badge badge-privacy">100% On-Device</span>
+              </div>
+              <h3 class="card-title">DocuChat — Private On-Device Document Q&A</h3>
+              <p class="card-desc">
+                A native macOS desktop application for intelligent, private document Q&A across PDFs, photos, and markdown files. Zero data ever leaves the user's Mac.
+              </p>
+
+              <div class="engineering-takeaways">
+                <div class="takeaway-item">
+                  <strong>Privacy Architecture:</strong> Designed around local semantic vector search and CoreML pipelines, guaranteeing that sensitive business and personal documents remain strictly air-gapped.
+                </div>
+              </div>
+
+              <div class="card-actions">
+                <a class="button button-card-primary" href="https://github.com/itsmeyuvraj/DocuChat" target="_blank" rel="noreferrer">
+                  <span>View Repository</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4: Identity Generator -->
+          <article class="featured-card" data-category="macos">
+            <div class="card-media">
+              <div class="mockup-chrome mac-chrome">
+                <div class="chrome-header">
+                  <div class="chrome-dots">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <span class="chrome-title">Identity Generator — Liquid Glass Design</span>
+                  <span class="chrome-tag">macOS Utility</span>
+                </div>
+                <div class="chrome-canvas liquid-canvas">
+                  <div class="id-card-preview">
+                    <div class="id-card-top">
+                      <div class="id-avatar-circle">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                      </div>
+                      <div class="id-meta">
+                        <span class="id-name">Alex M. Mercer</span>
+                        <span class="id-role">Senior Systems Architect</span>
+                      </div>
+                      <span class="id-security-chip">TEST ONLY</span>
+                    </div>
+                    <div class="id-data-grid">
+                      <div class="id-field">
+                        <label>EMAIL</label>
+                        <span>alex.mercer@testcorp.internal</span>
+                      </div>
+                      <div class="id-field">
+                        <label>DEVICE UUID</label>
+                        <span class="mono-text">4F1B-998C-D03E</span>
+                      </div>
+                    </div>
+                    <div class="id-actions-bar">
+                      <span class="copy-hint">Click any field to copy mock data</span>
+                      <span class="glass-pill">Liquid Glass UI</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-details">
+              <div class="card-badge-row">
+                <span class="badge badge-platform">macOS App</span>
+                <span class="badge badge-tech">SwiftUI</span>
+                <span class="badge badge-tech">Liquid Glass UI</span>
+                <span class="badge badge-tech">Developer Tool</span>
+              </div>
+              <h3 class="card-title">Identity Generator</h3>
+              <p class="card-desc">
+                A native macOS test data utility designed with Apple's "Liquid Glass" design aesthetic. Generates realistic, anonymized user profiles, mock credit cards, and cryptographic test IDs for QA and dev workflows.
+              </p>
+
+              <div class="engineering-takeaways">
+                <div class="takeaway-item">
+                  <strong>UI Craft:</strong> Showcases advanced SwiftUI custom materials, vibrancy shaders, and keyboard-first accessibility shortcuts.
+                </div>
+              </div>
+
+              <div class="card-actions">
+                <a class="button button-card-primary" href="https://github.com/itsmeyuvraj/Identity-Generator" target="_blank" rel="noreferrer">
+                  <span>View Repository</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 5: Mastodon Menu Bar Client -->
+          <article class="featured-card" data-category="macos">
+            <div class="card-media">
+              <div class="mockup-chrome mac-chrome">
+                <div class="chrome-header">
+                  <div class="chrome-dots">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <span class="chrome-title">Mastodon Menu Bar — Swift Native</span>
+                  <span class="chrome-tag">AppKit / SwiftUI</span>
+                </div>
+                <div class="chrome-canvas mini-client-canvas">
+                  <div class="mini-bar-ui">
+                    <div class="mini-bar-header">
+                      <span class="menu-icon">🐘</span>
+                      <span>Timeline Quick-View</span>
+                      <span class="badge-unread">3 new</span>
+                    </div>
+                    <div class="mini-feed-item">
+                      <div class="dot-unread"></div>
+                      <div class="mini-feed-body">
+                        <strong>Dan @swiftdev:</strong> Swift 6 strict concurrency checks made our app rock-solid!
+                      </div>
+                    </div>
+                    <div class="mini-feed-item">
+                      <div class="dot-read"></div>
+                      <div class="mini-feed-body">
+                        <strong>Elena @uicraft:</strong> Exploring new SwiftUI animations in macOS Sequoia.
+                      </div>
+                    </div>
+                    <div class="mini-input-bar">
+                      <span>What's on your mind?</span>
+                      <button type="button">Toot</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-details">
+              <div class="card-badge-row">
+                <span class="badge badge-platform">macOS App</span>
+                <span class="badge badge-tech">Swift</span>
+                <span class="badge badge-tech">REST APIs</span>
+                <span class="badge badge-tech">Menu Bar Extra</span>
+              </div>
+              <h3 class="card-title">Mastodon Menu Bar Client</h3>
+              <p class="card-desc">
+                A featherweight, native macOS menu bar companion app for instant toot publishing and timeline monitoring without keeping a browser tab open.
+              </p>
+              <div class="card-actions">
+                <a class="button button-card-primary" href="https://github.com/itsmeyuvraj/Mastadon-Client" target="_blank" rel="noreferrer">
+                  <span>View Repository</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 6: Beautiful Mastodon Web -->
+          <article class="featured-card" data-category="web">
+            <div class="card-media">
+              <div class="mockup-chrome web-chrome">
+                <div class="chrome-header">
+                  <div class="chrome-dots">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <div class="chrome-url-bar">https://beautiful-mastodon.app</div>
+                </div>
+                <div class="chrome-canvas web-mastodon-canvas">
+                  <div class="web-ui-preview">
+                    <div class="web-col-nav">
+                      <span class="nav-dot active"></span>
+                      <span class="nav-dot"></span>
+                      <span class="nav-dot"></span>
+                    </div>
+                    <div class="web-col-feed">
+                      <div class="web-card-banner">Clean Mastodon Experience</div>
+                      <div class="web-card-post">
+                        <div class="post-header-line"></div>
+                        <div class="post-body-line"></div>
+                        <div class="post-body-line short"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-details">
+              <div class="card-badge-row">
+                <span class="badge badge-web">Web</span>
+                <span class="badge badge-tech">JavaScript</span>
+                <span class="badge badge-tech">Responsive CSS</span>
+                <span class="badge badge-tech">Web Components</span>
+              </div>
+              <h3 class="card-title">Beautiful Mastodon Web</h3>
+              <p class="card-desc">
+                A clean, modern, and responsive web client interface for the Mastodon network designed for frictionless reading and intuitive typography.
+              </p>
+              <div class="card-actions">
+                <a class="button button-card-primary" href="https://github.com/itsmeyuvraj/Beautiful-Mastodon" target="_blank" rel="noreferrer">
+                  <span>View Repository</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Technical Skills & Engineering Competencies Matrix -->
+      <section id="skills" class="skills section-shell">
+        <div class="section-header-wrap">
+          <span class="eyebrow-tag">Technical Competencies</span>
+          <h2 class="section-title">Skills & Engineering Tooling</h2>
+          <p class="section-subtitle">
+            My primary stack covers native mobile and desktop development, low-overhead system programming, and modern reactive architectures.
+          </p>
+        </div>
+
+        <div class="skills-matrix-grid">
+          <!-- Skill Card 1: Apple Ecosystem -->
+          <div class="skill-domain-card">
+            <div class="domain-header">
+              <div class="domain-icon apple-icon">🍎</div>
+              <div>
+                <h3 class="domain-title">Apple Platforms & Swift</h3>
+                <span class="domain-badge">Primary Focus</span>
+              </div>
+            </div>
+            <p class="domain-summary">
+              Building native macOS and iOS software following Apple Human Interface Guidelines and modern concurrency standards.
+            </p>
+            <div class="skill-tags">
+              <span class="skill-tag">Swift 5 & 6</span>
+              <span class="skill-tag">SwiftUI</span>
+              <span class="skill-tag">AppKit & UIKit</span>
+              <span class="skill-tag">Combine</span>
+              <span class="skill-tag">Swift Concurrency (async/await)</span>
+              <span class="skill-tag">Menu Bar Extras</span>
+              <span class="skill-tag">CoreData & SwiftData</span>
+              <span class="skill-tag">Instruments Profiling</span>
+            </div>
+          </div>
+
+          <!-- Skill Card 2: Android & Mobile -->
+          <div class="skill-domain-card">
+            <div class="domain-header">
+              <div class="domain-icon android-icon">🤖</div>
+              <div>
+                <h3 class="domain-title">Android Ecosystem</h3>
+                <span class="domain-badge">Native Mobile</span>
+              </div>
+            </div>
+            <p class="domain-summary">
+              Designing native Android apps with declarative UI, battery-conscious background workers, and reactive data streams.
+            </p>
+            <div class="skill-tags">
+              <span class="skill-tag">Kotlin</span>
+              <span class="skill-tag">Jetpack Compose</span>
+              <span class="skill-tag">Material 3</span>
+              <span class="skill-tag">Coroutines & StateFlow</span>
+              <span class="skill-tag">WorkManager</span>
+              <span class="skill-tag">Glance (App Widgets)</span>
+              <span class="skill-tag">Room DB</span>
+              <span class="skill-tag">Android Studio</span>
+            </div>
+          </div>
+
+          <!-- Skill Card 3: Web, Systems & Languages -->
+          <div class="skill-domain-card">
+            <div class="domain-header">
+              <div class="domain-icon web-icon">🌐</div>
+              <div>
+                <h3 class="domain-title">Web & Systems</h3>
+                <span class="domain-badge">Full-Stack & Tools</span>
+              </div>
+            </div>
+            <p class="domain-summary">
+              Creating lightweight, accessible web interfaces and tooling with zero bloat and high rendering speeds.
+            </p>
+            <div class="skill-tags">
+              <span class="skill-tag">TypeScript</span>
+              <span class="skill-tag">JavaScript (ESNext)</span>
+              <span class="skill-tag">HTML5 Semantic</span>
+              <span class="skill-tag">Modern CSS / Responsive</span>
+              <span class="skill-tag">REST & GraphQL APIs</span>
+              <span class="skill-tag">Git & GitHub Actions</span>
+              <span class="skill-tag">Python Scripting</span>
+              <span class="skill-tag">ActivityPub Protocol</span>
+            </div>
+          </div>
+
+          <!-- Skill Card 4: Architecture & Engineering Mindset -->
+          <div class="skill-domain-card">
+            <div class="domain-header">
+              <div class="domain-icon arch-icon">📐</div>
+              <div>
+                <h3 class="domain-title">Architecture & Practices</h3>
+                <span class="domain-badge">Quality & Scale</span>
+              </div>
+            </div>
+            <p class="domain-summary">
+              Engineering with production-ready principles that keep systems testable, modular, and easy to maintain over time.
+            </p>
+            <div class="skill-tags">
+              <span class="skill-tag">MVVM & Clean Architecture</span>
+              <span class="skill-tag">Reactive Programming</span>
+              <span class="skill-tag">Low-Latency Memory Profiling</span>
+              <span class="skill-tag">Battery & Thermal Management</span>
+              <span class="skill-tag">Privacy-Preserving On-Device AI</span>
+              <span class="skill-tag">Design Systems</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why Work With Me / Engineering Philosophy (Interview Focus) -->
+      <section id="about" class="about-section section-shell">
+        <div class="about-layout">
+          <div class="about-lead">
+            <span class="eyebrow-tag">Engineering Mindset</span>
+            <h2 class="about-headline">
+              Great software sits at the intersection of <em>low latency</em>, <em>clean code</em>, and <em>human empathy</em>.
+            </h2>
+            <div class="about-bio-text">
+              <p>
+                I'm a developer who genuinely obsesses over the details that make software feel good to use. When building native software for macOS or Android, that means optimizing runloop performance, avoiding unnecessary allocations, and ensuring state transitions are seamless.
+              </p>
+              <p>
+                Whether I'm writing Swift, Kotlin, or TypeScript, I believe code should be written for clarity, long-term maintainability, and measurable impact. In technical interviews and team environments, I love digging into tough system constraints and finding elegant solutions.
+              </p>
+            </div>
+
+            <div class="about-quick-links">
+              <a class="button button-secondary" href="https://github.com/itsmeyuvraj" target="_blank" rel="noreferrer">
+                <span>Explore GitHub Activity</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+              <a class="button button-ghost" href="#contact">
+                <span>Get In Touch</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Interview Value Pillars -->
+          <div class="about-pillars">
+            <div class="pillar-card">
+              <div class="pillar-number">01</div>
+              <div class="pillar-body">
+                <h4>Native-First Performance</h4>
+                <p>I prioritize native APIs and OS-level frameworks so applications stay lightweight, responsive, and battery-friendly with zero unnecessary abstractions.</p>
+              </div>
+            </div>
+
+            <div class="pillar-card">
+              <div class="pillar-number">02</div>
+              <div class="pillar-body">
+                <h4>Obsession with Craft</h4>
+                <p>From micro-interactions and keyboard accessibility to typographic hierarchy and dark mode vibrancy, every detail is engineered with intention.</p>
+              </div>
+            </div>
+
+            <div class="pillar-card">
+              <div class="pillar-number">03</div>
+              <div class="pillar-body">
+                <h4>Collaborative & Pragmatic</h4>
+                <p>I value clear communication, thorough documentation, code reviews, and delivering features that move products forward reliably.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Highlighted Repositories Section -->
+      <section id="repos" class="repos-section section-shell">
+        <div class="section-header-wrap">
+          <div>
+            <span class="eyebrow-tag">Open Source</span>
+            <h2 class="section-title">Highlighted Repositories</h2>
+          </div>
+          <a class="button button-ghost" href="https://github.com/itsmeyuvraj" target="_blank" rel="noreferrer">
+            <span>See all repositories on GitHub</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
           </a>
-          <a href="https://github.com/itsmeyuvraj/DocuChat" target="_blank" rel="noreferrer">
-            <span class="note-date">SWIFT</span>
-            <div class="note-info">
-              <span class="note-title">DocuChat</span>
-              <p class="note-desc">A private Mac app for asking questions about PDFs, photos, and text documents.</p>
+        </div>
+
+        <div class="repos-table-list">
+          <!-- Repo Item 1 -->
+          <a class="repo-row-item" href="https://github.com/itsmeyuvraj/Statz" target="_blank" rel="noreferrer">
+            <div class="repo-lang-col">
+              <span class="lang-pill lang-swift">SWIFT</span>
             </div>
-            <span class="note-arrow">↗</span>
+            <div class="repo-main-col">
+              <div class="repo-title-row">
+                <h4 class="repo-title">Statz</h4>
+                <span class="repo-tag-sub">macOS Menu Bar</span>
+              </div>
+              <p class="repo-desc">Native SwiftUI menu bar app for monitoring real-time system performance, GPU engine stats, focus time, screen time, and weather.</p>
+            </div>
+            <div class="repo-meta-col">
+              <span class="repo-link-arrow">↗</span>
+            </div>
           </a>
-          <a href="https://github.com/itsmeyuvraj/Identity-Generator" target="_blank" rel="noreferrer">
-            <span class="note-date">SWIFT</span>
-            <div class="note-info">
-              <span class="note-title">Identity Generator</span>
-              <p class="note-desc">A native "Liquid Glass" utility for macOS designed for privacy and test identity generation.</p>
+
+          <!-- Repo Item 2 -->
+          <a class="repo-row-item" href="https://github.com/itsmeyuvraj/DocuChat" target="_blank" rel="noreferrer">
+            <div class="repo-lang-col">
+              <span class="lang-pill lang-swift">SWIFT</span>
             </div>
-            <span class="note-arrow">↗</span>
+            <div class="repo-main-col">
+              <div class="repo-title-row">
+                <h4 class="repo-title">DocuChat</h4>
+                <span class="repo-tag-sub">Local AI</span>
+              </div>
+              <p class="repo-desc">Private on-device Mac app for asking questions and querying PDFs, photos, and markdown documents with 100% data privacy.</p>
+            </div>
+            <div class="repo-meta-col">
+              <span class="repo-link-arrow">↗</span>
+            </div>
           </a>
-          <a href="https://github.com/itsmeyuvraj/Mastadon-Client" target="_blank" rel="noreferrer">
-            <span class="note-date">SWIFT</span>
-            <div class="note-info">
-              <span class="note-title">Mastodon Menu Bar Client</span>
-              <p class="note-desc">A lightweight, native macOS menu bar app for instant tooting and timeline browsing.</p>
+
+          <!-- Repo Item 3 -->
+          <a class="repo-row-item" href="https://github.com/itsmeyuvraj/Mastodon-Client-For-Android" target="_blank" rel="noreferrer">
+            <div class="repo-lang-col">
+              <span class="lang-pill lang-kotlin">KOTLIN</span>
             </div>
-            <span class="note-arrow">↗</span>
+            <div class="repo-main-col">
+              <div class="repo-title-row">
+                <h4 class="repo-title">Mastodon-Client-For-Android</h4>
+                <span class="repo-tag-sub">Jetpack Compose</span>
+              </div>
+              <p class="repo-desc">Feature-rich Android app and home screen widget with live feed streaming, multi-server timeline browsing, and background sync.</p>
+            </div>
+            <div class="repo-meta-col">
+              <span class="repo-link-arrow">↗</span>
+            </div>
           </a>
-          <a href="https://github.com/itsmeyuvraj/Mastodon-Client-For-Android" target="_blank" rel="noreferrer">
-            <span class="note-date">KOTLIN</span>
-            <div class="note-info">
-              <span class="note-title">Mastodon Widget for Android</span>
-              <p class="note-desc">A feature-rich home screen widget and app for live feeds, posting, and multi-server timelines.</p>
+
+          <!-- Repo Item 4 -->
+          <a class="repo-row-item" href="https://github.com/itsmeyuvraj/Identity-Generator" target="_blank" rel="noreferrer">
+            <div class="repo-lang-col">
+              <span class="lang-pill lang-swift">SWIFT</span>
             </div>
-            <span class="note-arrow">↗</span>
+            <div class="repo-main-col">
+              <div class="repo-title-row">
+                <h4 class="repo-title">Identity-Generator</h4>
+                <span class="repo-tag-sub">Liquid Glass UI</span>
+              </div>
+              <p class="repo-desc">Native macOS utility with Apple Liquid Glass styling for instant generation and copying of test identities and mock personas.</p>
+            </div>
+            <div class="repo-meta-col">
+              <span class="repo-link-arrow">↗</span>
+            </div>
           </a>
-          <a href="https://github.com/itsmeyuvraj/Beautiful-Mastodon" target="_blank" rel="noreferrer">
-            <span class="note-date">WEB</span>
-            <div class="note-info">
-              <span class="note-title">Beautiful Mastodon</span>
-              <p class="note-desc">A clean, modern, and responsive web client interface for the Mastodon network.</p>
+
+          <!-- Repo Item 5 -->
+          <a class="repo-row-item" href="https://github.com/itsmeyuvraj/Mastadon-Client" target="_blank" rel="noreferrer">
+            <div class="repo-lang-col">
+              <span class="lang-pill lang-swift">SWIFT</span>
             </div>
-            <span class="note-arrow">↗</span>
+            <div class="repo-main-col">
+              <div class="repo-title-row">
+                <h4 class="repo-title">Mastodon-Client</h4>
+                <span class="repo-tag-sub">macOS Companion</span>
+              </div>
+              <p class="repo-desc">Lightweight native macOS menu bar app for rapid toot authoring and compact timeline browsing.</p>
+            </div>
+            <div class="repo-meta-col">
+              <span class="repo-link-arrow">↗</span>
+            </div>
+          </a>
+
+          <!-- Repo Item 6 -->
+          <a class="repo-row-item" href="https://github.com/itsmeyuvraj/Beautiful-Mastodon" target="_blank" rel="noreferrer">
+            <div class="repo-lang-col">
+              <span class="lang-pill lang-web">WEB</span>
+            </div>
+            <div class="repo-main-col">
+              <div class="repo-title-row">
+                <h4 class="repo-title">Beautiful-Mastodon</h4>
+                <span class="repo-tag-sub">Frontend</span>
+              </div>
+              <p class="repo-desc">Clean, modern, and responsive web client interface for the federated Mastodon network.</p>
+            </div>
+            <div class="repo-meta-col">
+              <span class="repo-link-arrow">↗</span>
+            </div>
           </a>
         </div>
       </section>
 
-      <section id="contact" class="contact section-shell">
-        <p class="eyebrow">Have a good one?</p>
-        <h2>Let's make<br /><em>something useful.</em></h2>
-        <a class="contact-email" href="mailto:hello@itsmeyuvraj.dev">hello@itsmeyuvraj.dev <span>↗</span></a>
+      <!-- Contact & Action Section -->
+      <section id="contact" class="contact-section section-shell">
+        <div class="contact-card">
+          <div class="contact-glow" aria-hidden="true"></div>
+          <div class="contact-content">
+            <div class="contact-pill">
+              <span class="live-dot"></span> Available for Interviews & Projects
+            </div>
+            <h2 class="contact-headline">
+              Let's build something exceptional together.
+            </h2>
+            <p class="contact-subtext">
+              I am currently open to Software Engineering roles, mobile development opportunities, and collaborative ventures. Feel free to reach out directly.
+            </p>
+
+            <div class="contact-action-box">
+              <a class="button button-primary contact-main-btn" href="mailto:hello@itsmeyuvraj.dev?subject=Interview%20Inquiry%20-%20Software%20Engineer">
+                <span>Send me an email</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+              </a>
+
+              <button class="button button-secondary" id="copy-email-bottom" type="button" aria-label="Copy email address">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h6"></path></svg>
+                <span class="copy-email-label">Copy: hello@itsmeyuvraj.dev</span>
+              </button>
+            </div>
+
+            <div class="contact-toast" id="copy-toast" role="status" aria-live="polite">
+              ✓ Email copied to clipboard!
+            </div>
+          </div>
+        </div>
       </section>
     </main>
 
+    <!-- Footer -->
     <footer class="site-footer section-shell">
-      <span>© <span id="year"></span> Yuvraj</span>
-      <span class="footer-center">Designed & built with intention</span>
-      <div class="footer-links"><a href="https://github.com/itsmeyuvraj" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn ↗</a></div>
+      <div class="footer-left">
+        <span class="brand-name">Yuvraj</span>
+        <span class="footer-divider">•</span>
+        <span class="footer-copy">© <span id="year"></span> Yuvraj. All rights reserved.</span>
+      </div>
+
+      <div class="footer-center">
+        <span>Engineered with Swift & Web Craft</span>
+      </div>
+
+      <div class="footer-links">
+        <a href="https://github.com/itsmeyuvraj" target="_blank" rel="noreferrer" class="footer-link">
+          <span>GitHub</span>
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+        </a>
+        <a href="https://linkedin.com" target="_blank" rel="noreferrer" class="footer-link">
+          <span>LinkedIn</span>
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+        </a>
+        <a href="mailto:hello@itsmeyuvraj.dev" class="footer-link">
+          <span>Email</span>
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+        </a>
+      </div>
     </footer>
+
     <script src="script.js"></script>
   </body>
 </html>
